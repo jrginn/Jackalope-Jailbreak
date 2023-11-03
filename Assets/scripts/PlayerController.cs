@@ -19,4 +19,9 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         transform.position +=  ((horizontal * transform.right) + (vertical * transform.forward)).normalized * moveSpeed * Time.deltaTime;
     }
+
+    void IncreaseMoveSpeed(float increase)
+    {
+        moveSpeed += increase;
+    }
 }
