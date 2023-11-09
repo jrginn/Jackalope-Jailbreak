@@ -9,8 +9,10 @@ public class CrosshairMovement : MonoBehaviour
      * RenderMode = "Screen Space - Overlay" for this to work properly
      */
 
-    public float initXVelocity; // Define in component view
+    // Side to side velocity in pixels/second
+    public float initXVelocity;
     public Camera cam;
+    // Board to bound crosshair to
     public GameObject board;
 
     private float _currentVX;
@@ -65,12 +67,12 @@ public class CrosshairMovement : MonoBehaviour
             screenPos.y, transform.position.z);
     }
 
-    void FreezeOnShoot() // Will be called by shoot component
+    public void FreezeOnShoot() // Will be called by shoot component
     {
         _currentVX = 0;
     }
 
-    void ResetValues() // Will be called by shoot component
+    public void ResetValues() // Will be called by shoot component
     {
         _currentVX = initXVelocity;
         // Crosshair always starts in center of screen
