@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -17,7 +19,9 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        transform.position +=  ((horizontal * transform.right) + (vertical * transform.forward)).normalized * moveSpeed * Time.deltaTime;
+        Vector3 movement = (horizontal * transform.right) + (vertical * transform.forward);
+        movement = movement.normalized * moveSpeed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
     }
 
     void IncreaseMoveSpeed(float increase)
