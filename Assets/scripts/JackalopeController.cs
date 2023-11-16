@@ -17,8 +17,13 @@ public class JackalopeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 vec = transform.right.normalized * moveSpeed * Time.deltaTime;
-        transform.position += vec;
+        
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 vec = transform.forward.normalized * moveSpeed * Time.deltaTime;
+        GetComponent<Rigidbody>().MovePosition(vec + transform.position);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,7 +31,7 @@ public class JackalopeController : MonoBehaviour
         if (!collision.collider.CompareTag("Ground"))
         {
             angle = Random.Range(150, 210);
-            transform.RotateAround(transform.position, Vector3.up, angle);
+            transform.Rotate(Vector3.up, angle);
         }
     }
 }
