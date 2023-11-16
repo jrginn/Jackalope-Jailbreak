@@ -35,10 +35,10 @@ public class DartShoot : MonoBehaviour
         // Use crosshair position to cast ray
         Ray ray = cam.ScreenPointToRay(transform.position);
 
-        // TODO: Probably use coroutine here
+        powerBar.SetActive(true);
         float power = powerBar.GetComponent<PowerSelect>().GetPower();
         // Wait for power bar to finish
-
+        powerBar.SetActive(false);
         // Create Dart and give direction, the dart fly component handles the rest
         // Assuming dart model 'points' in +z
         GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
