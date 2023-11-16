@@ -162,8 +162,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 39.5815, y: 22.010586, z: 39.929066}
-  m_Center: {x: 0.10804391, y: 10.77836, z: 8.822706}
+  m_Size: {x: 39.5815, y: 22.010586, z: 40.399723}
+  m_Center: {x: 0.10804364, y: 10.77836, z: 9.058032}
 --- !u!23 &122356646
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!1 &291645595
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,8 +496,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.86275, y: 27.328474, z: 40.225994}
-  m_Center: {x: 0.85790634, y: 4.304631, z: 7.013764}
+  m_Size: {x: 33.347916, y: 27.9664, z: 40.225994}
+  m_Center: {x: 0.61532116, y: 3.9856682, z: 7.013764}
 --- !u!54 &492789963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &854453521
 BoxCollider:
@@ -1152,8 +1152,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 36.80282, y: 18.702713, z: 49.322235}
-  m_Center: {x: 4.5682178, y: 9.02911, z: -1.0745697}
+  m_Size: {x: 39.265778, y: 18.702713, z: 51.533234}
+  m_Center: {x: 3.33673, y: 9.02911, z: 0.03093911}
 --- !u!23 &1127741881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1245,7 +1245,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1358956170
 GameObject:
@@ -1655,7 +1655,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!65 &1993821958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c80410a9f31616459e987ee9249445e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 37.4
+  moveSpeed: 10
 --- !u!114 &1993821963
 MonoBehaviour:
   m_ObjectHideFlags: 0
