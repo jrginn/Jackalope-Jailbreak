@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class DartFly : MonoBehaviour
@@ -26,22 +27,34 @@ public class DartFly : MonoBehaviour
             ((power * velocityRatio + velocityFloor) * Time.deltaTime) * Vector3.forward);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.name.Contains("Balloon"))
+        // Assumes Balloon prefab has model as child
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.GetComponentInParent<BalloonPop>() != null)
         {
+            BalloonPop bp = collision.gameObject.GetComponentInParent<BalloonPop>();
             if (Random.value <= power)
             {
-                BalloonPop bp = other.GetComponent<BalloonPop>();
                 bp.Pop();
+                // Self destruct
+                Destroy(gameObject);
             } else
             {
-                // Maybe do a bounce effect here?
+                // Dart will bounce, turn gravity on and destroy after 5s
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
+                velocityFloor = 0;
+                velocityRatio = 0;
+                Destroy(gameObject, 5);
             }
         }
-        else if (other.gameObject.name.Equals("Board"))
+        else if (collision.gameObject.name.Equals("Board"))
         {
-            // TODO: Stick dart to board
+            // Stick dart to board
+            velocityFloor = 0;
+            velocityRatio = 0;
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            Destroy(rb);
         }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f8b5475a287394b901c3c31d85f0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initXVelocity: 100
+  initXVelocity: 500
   cam: {fileID: 432363282}
   board: {fileID: 2096340402}
 --- !u!114 &1944224515
@@ -1742,6 +1742,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balloon: {fileID: 1949181496506588230, guid: 878b5958b7a9afc40a9dceb07e6df88d, type: 3}
   balloonNum: 7
+  spawnGridSize: 5
+  scoreCounter: {fileID: 1249377204}
 --- !u!64 &2096340404
 MeshCollider:
   m_ObjectHideFlags: 0

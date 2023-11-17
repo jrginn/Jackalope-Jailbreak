@@ -19,8 +19,8 @@ public class BalloonPop : MonoBehaviour
 
     public void Pop()
     {
-        Destroy(gameObject);
         ScoreCounting sc = scoreCounter.GetComponent<ScoreCounting>();
         sc.Increment();
+        Destroy(gameObject);
     }
 }

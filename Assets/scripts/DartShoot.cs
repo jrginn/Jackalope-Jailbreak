@@ -29,27 +29,30 @@ public class DartShoot : MonoBehaviour
 
     void Shoot()
     {
-        ammoCounter.GetComponent<AmmoCount>().DecreaseBy1();
-        // "this" is the Crosshair gameObject
-        _cm.FreezeOnShoot();
-        // Use crosshair position to cast ray
-        Ray ray = cam.ScreenPointToRay(transform.position);
+        if (ammoCounter.GetComponent<AmmoCount>().DecreaseBy1())
+        {
+            // "this" is the Crosshair gameObject
+            _cm.FreezeOnShoot();
+            // Use crosshair position to cast ray
+            Ray ray = cam.ScreenPointToRay(transform.position);
 
-        powerBar.SetActive(true);
-        /*
-         * TODO: Wait for power bar here
-         */
-        float power = powerBar.GetComponent<PowerSelect>().GetPower();
-        powerBar.SetActive(false);
+            powerBar.SetActive(true);
+            /*
+             * TODO: Wait for power bar here
+             */
+            float power = powerBar.GetComponent<PowerSelect>().GetPower();
 
-        // Create Dart and give direction, the dart fly component handles the rest
-        // Assuming dart model 'points' in +z
-        GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
-            Quaternion.LookRotation(ray.direction));
-        dart.GetComponent<DartFly>().power = power;
-        // Maybe wait for dart to hit here?
+            powerBar.SetActive(false);
 
-        // Reset crosshair pos
-        _cm.ResetValues();
+            // Create Dart and give direction, the dart fly component handles the rest
+            // Assuming dart model 'points' in +z
+            GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
+                Quaternion.LookRotation(ray.direction));
+            dart.GetComponent<DartFly>().power = power;
+            // Maybe wait for dart to hit here?
+
+            // Reset crosshair pos
+            _cm.ResetValues();
+        }
     }
 }
