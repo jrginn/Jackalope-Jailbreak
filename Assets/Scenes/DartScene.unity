@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4f5c834bdb66940b4c5e91a6eae7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   velocityScale: 0.02
   greenMin: 0.4
   greenLen: 0.2
@@ -1361,6 +1362,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1660241076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660241077}
+  - component: {fileID: 1660241078}
+  m_Layer: 0
+  m_Name: DartGameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660241077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660241076}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660241078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660241076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6ed6b5b3129d944bc56ec512dbb609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &1668349314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f8b5475a287394b901c3c31d85f0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 1660241076}
   initXVelocity: 500
   cam: {fileID: 432363282}
   board: {fileID: 2096340402}
@@ -1537,6 +1584,7 @@ MonoBehaviour:
   cam: {fileID: 432363282}
   powerBar: {fileID: 262830973}
   ammoCounter: {fileID: 346802414}
+  controller: {fileID: 1660241076}
 --- !u!1 &2030363811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,3 +1888,4 @@ SceneRoots:
   - {fileID: 2096340407}
   - {fileID: 1563061193}
   - {fileID: 1668349317}
+  - {fileID: 1660241077}

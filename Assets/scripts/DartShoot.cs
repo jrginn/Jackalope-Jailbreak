@@ -9,19 +9,22 @@ public class DartShoot : MonoBehaviour
     public Camera cam;
     public GameObject powerBar;
     public GameObject ammoCounter;
+    public GameObject controller;
 
-    private CrosshairMovement _cm;
+    private DartGameController _controllerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        _cm = GetComponent<CrosshairMovement>(); 
+        _controllerScript = controller.GetComponent<DartGameController>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (_controllerScript.state == GameState.Aiming
+            && Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
@@ -31,28 +34,32 @@ public class DartShoot : MonoBehaviour
     {
         if (ammoCounter.GetComponent<AmmoCount>().DecreaseBy1())
         {
-            // "this" is the Crosshair gameObject
-            _cm.FreezeOnShoot();
-            // Use crosshair position to cast ray
-            Ray ray = cam.ScreenPointToRay(transform.position);
 
+            // Change game state
+            _controllerScript.state = GameState.SelectingPower;
             powerBar.SetActive(true);
-            /*
-             * TODO: Wait for power bar here
-             */
-            float power = powerBar.GetComponent<PowerSelect>().GetPower();
 
-            powerBar.SetActive(false);
-
-            // Create Dart and give direction, the dart fly component handles the rest
-            // Assuming dart model 'points' in +z
-            GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
-                Quaternion.LookRotation(ray.direction));
-            dart.GetComponent<DartFly>().power = power;
-            // Maybe wait for dart to hit here?
-
-            // Reset crosshair pos
-            _cm.ResetValues();
+            // Wait for power bar to finish
+            StartCoroutine(WaitForPowerBar());
         }
+    }
+
+    // Coroutine to wait for power bar to finish
+    IEnumerator WaitForPowerBar()
+    {
+        float power = -1f;
+        while (power < 0)
+        {
+            power = powerBar.GetComponent<PowerSelect>().GetPower();
+            yield return null;
+        }
+        // Use crosshair position to cast ray
+        Ray ray = cam.ScreenPointToRay(transform.position);
+
+        // Create Dart and give direction, the dart fly component handles the rest
+        // Assuming dart model 'points' in +z
+        GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
+                Quaternion.LookRotation(ray.direction));
+        dart.GetComponent<DartFly>().power = power;
     }
 }

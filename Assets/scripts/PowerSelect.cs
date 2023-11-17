@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PowerSelect : MonoBehaviour
 {
+    public GameObject controller;
     public float velocityScale;
 
     // Band values
