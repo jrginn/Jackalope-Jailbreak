@@ -28,20 +28,11 @@ public class CrosshairMovement : MonoBehaviour
 
         // Find upper and lower bounds of crosshair movement ahead of time
         // Using Renderer.bounds to avoid hardcoding
-        // r.bounds.extents returns size of board mesh/2
         Renderer r = board.GetComponent<Renderer>();
-        // First get bounds as world points
-        float boardHalfW = r.bounds.extents.x * board.transform.lossyScale.x,
-            boardHalfH = r.bounds.extents.y * board.transform.lossyScale.y;
         // Top right corner of board
-        _upperBound = new Vector2(
-            board.transform.position.x + boardHalfW,
-            board.transform.position.y + boardHalfH);
+        _upperBound = board.transform.position + r.bounds.extents;
         // Bottom left corner of board
-        _lowerBound = new Vector2(
-            board.transform.position.x - boardHalfW,
-            board.transform.position.y - boardHalfH);
-
+        _lowerBound = board.transform.position - r.bounds.extents;
         // But, now we need to convert that to screen coordinates
         _upperBound = cam.WorldToScreenPoint(_upperBound);
         _lowerBound = cam.WorldToScreenPoint(_lowerBound);

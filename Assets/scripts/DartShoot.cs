@@ -36,9 +36,12 @@ public class DartShoot : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(transform.position);
 
         powerBar.SetActive(true);
+        /*
+         * TODO: Wait for power bar here
+         */
         float power = powerBar.GetComponent<PowerSelect>().GetPower();
-        // Wait for power bar to finish
         powerBar.SetActive(false);
+
         // Create Dart and give direction, the dart fly component handles the rest
         // Assuming dart model 'points' in +z
         GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,

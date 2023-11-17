@@ -28,9 +28,20 @@ public class DartFly : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Board")
+        if (other.gameObject.name.Contains("Balloon"))
         {
-
+            if (Random.value <= power)
+            {
+                BalloonPop bp = other.GetComponent<BalloonPop>();
+                bp.Pop();
+            } else
+            {
+                // Maybe do a bounce effect here?
+            }
+        }
+        else if (other.gameObject.name.Equals("Board"))
+        {
+            // TODO: Stick dart to board
         }
     }
 }
