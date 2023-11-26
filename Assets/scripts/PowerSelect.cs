@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PowerSelect : MonoBehaviour
 {
     public GameObject controller;
+    public GameObject crosshair;
     public float velocityScale;
 
     // Band values
@@ -15,10 +16,12 @@ public class PowerSelect : MonoBehaviour
 
     private Slider slider;
     private float currDir;
+    private DartGameController _controllerScript;
     // Start is called before the first frame update
     void Start()
     {
         slider = GetComponent<Slider>();
+        _controllerScript = controller.GetComponent<DartGameController>();
         currDir = 1f;
         // Self-disable on start, only activate when called
         gameObject.SetActive(false);
@@ -27,14 +30,25 @@ public class PowerSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (slider.normalizedValue <= 0 || slider.normalizedValue >= 1)
+
+        if (_controllerScript.state == GameState.SelectingPower)
         {
-            currDir *= -1;
-        }
-        // Eq: v = scale*cos^2(slider.value)* (+-1)
-        // I like cos^2 better as it makes it a little more difficult
-        slider.value += velocityScale * 
+            if (slider.normalizedValue <= 0 || slider.normalizedValue >= 1)
+            {
+                currDir *= -1;
+            }
+
+            // Eq: v = scale*cos^2(slider.value)* (+-1)
+            // I like cos^2 better as it makes it a little more difficult
+            slider.value += velocityScale *
             Mathf.Cos(slider.value) * Mathf.Cos(slider.value) * currDir;
+            if (Input.GetButtonDown("Fire1"))
+            {
+                _controllerScript.state = GameState.Aiming;
+                crosshair.GetComponent<DartShoot>().SpawnDart(GetPower());
+                gameObject.SetActive(false);
+            }
+        }
     }
 
     /**

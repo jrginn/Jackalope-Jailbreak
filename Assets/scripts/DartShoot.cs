@@ -39,25 +39,15 @@ public class DartShoot : MonoBehaviour
             _controllerScript.state = GameState.SelectingPower;
             powerBar.SetActive(true);
 
-            // Wait for power bar to finish
-            StartCoroutine(WaitForPowerBar());
+            // Power bar will send command to shoot
         }
     }
 
-    // Coroutine to wait for power bar to finish
-    IEnumerator WaitForPowerBar()
+    public void SpawnDart(float power)
     {
-        float power = -1f;
-        while (power < 0)
-        {
-            power = powerBar.GetComponent<PowerSelect>().GetPower();
-            yield return null;
-        }
         // Use crosshair position to cast ray
         Ray ray = cam.ScreenPointToRay(transform.position);
 
-        // Create Dart and give direction, the dart fly component handles the rest
-        // Assuming dart model 'points' in +z
         GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
                 Quaternion.LookRotation(ray.direction));
         dart.GetComponent<DartFly>().power = power;
