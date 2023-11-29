@@ -15,6 +15,7 @@ TagManager:
   - Saloon
   - GeneralStore
   - Jackalope
+  - RiddleBoard
   layers:
   - Default
   - TransparentFX
