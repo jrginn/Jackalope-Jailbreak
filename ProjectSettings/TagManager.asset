@@ -14,6 +14,8 @@ TagManager:
   - Bank
   - Saloon
   - GeneralStore
+  - Jackalope
+  - RiddleBoard
   layers:
   - Default
   - TransparentFX

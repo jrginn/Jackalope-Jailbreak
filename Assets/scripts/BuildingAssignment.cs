@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -61,6 +62,11 @@ public class BuildingAssignment : MonoBehaviour
 
         print(riddles[buildingAIndex, riddleA]);
         print(riddles[buildingBIndex, riddleB]);
+
+        GameObject text = GameObject.FindGameObjectWithTag("RiddleBoard");
+        text.GetComponent<TextMeshProUGUI>().SetText(riddles[buildingAIndex, riddleA] + "\n\n" + riddles[buildingBIndex, riddleB]);
+
+        //(riddles[buildingAIndex, riddleA] + "\n" + riddles[buildingBIndex, riddleB])
 
     }
 
