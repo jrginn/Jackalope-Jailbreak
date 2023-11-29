@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class Icon : MonoBehaviour
 {
+    private GameObject scoreManager;
     public float track;
     private KeyCode key;
-    private float speed = 25;
+    private float speed = 60;
     public float zBound;
     public Vector3 startPos;
     
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = GameObject.Find("ScoreManager");
         if (track == 1) {
             key = KeyCode.A;
         }
@@ -37,14 +39,16 @@ public class Button : MonoBehaviour
     }
 
     void OnTriggerStay(Collider other) {
-        if (Input.GetKeyDown(key))
+        if (Input.GetKey(key))
         { 
             if (other.name == "PerfectCollider") 
             {
                 Debug.Log("Perfect");
+                scoreManager.GetComponent<ScoreManager>().AddScore(2);
                 Destroy(gameObject);
             } else {
                 Debug.Log("Okay");
+                scoreManager.GetComponent<ScoreManager>().AddScore(1);
                 Destroy(gameObject);
             }
         }

@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameState {
+    Paused, GameOver
+};
+
+public enum Boots {
+    Red, Black, Brown
+};
+
+public enum Hat {
+    Red, Brown, Tan
+};
 public class GameManager : MonoBehaviour
 {  
     #region Singleton
@@ -28,21 +39,15 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public enum GameState {
-        Paused, GameOver
-    };
+    public Hat hat;
+    public Boots boots;
 
-    public enum Lasso {
-        Golden, Normal, Ratty
-    };
+    public void ChangeHat(Hat newHat) {
+        hat = newHat;
+    }
 
-    public enum Boots {
-        Red, Black, Brown
-    };
-
-    public enum Hat {
-        Red, Brown, Tan
-    };
-
+    public void ChangeBoots(Boots newBoots) {
+        boots = newBoots;
+    }
     
 }
