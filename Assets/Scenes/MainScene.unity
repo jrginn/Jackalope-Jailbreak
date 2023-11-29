@@ -261,9 +261,10 @@ GameObject:
   - component: {fileID: 122356647}
   - component: {fileID: 122356646}
   - component: {fileID: 122356645}
+  - component: {fileID: 122356649}
   m_Layer: 0
   m_Name: General Store
-  m_TagString: Untagged
+  m_TagString: GeneralStore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,6 +356,18 @@ Transform:
   - {fileID: 1924105378877864567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 217.788, z: 0}
+--- !u!114 &122356649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122356644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &232795119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -432,9 +445,10 @@ GameObject:
   - component: {fileID: 291645598}
   - component: {fileID: 291645597}
   - component: {fileID: 291645596}
+  - component: {fileID: 291645600}
   m_Layer: 0
   m_Name: Blacksmith
-  m_TagString: Untagged
+  m_TagString: Blacksmith
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,6 +540,18 @@ Transform:
   - {fileID: 1200610674245489072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180.498, z: 0}
+--- !u!114 &291645600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291645595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &492789957
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,9 +564,10 @@ GameObject:
   - component: {fileID: 492789960}
   - component: {fileID: 492789959}
   - component: {fileID: 492789962}
+  - component: {fileID: 492789963}
   m_Layer: 0
   m_Name: Butcher
-  m_TagString: Untagged
+  m_TagString: Butcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -632,6 +659,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 33.347916, y: 27.9664, z: 40.225994}
   m_Center: {x: 0.61532116, y: 3.9856682, z: 7.013764}
+--- !u!114 &492789963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492789957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,9 +838,10 @@ GameObject:
   - component: {fileID: 854453518}
   - component: {fileID: 854453517}
   - component: {fileID: 854453521}
+  - component: {fileID: 854453522}
   m_Layer: 0
   m_Name: Barber Shop
-  m_TagString: Untagged
+  m_TagString: BarberShop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,6 +933,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 33.17888, y: 20.774567, z: 45.41642}
   m_Center: {x: -6.0005956, y: 0.22451448, z: 2.78318}
+--- !u!114 &854453522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854453515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &869972092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1058,9 +1110,10 @@ GameObject:
   - component: {fileID: 975733717}
   - component: {fileID: 975733716}
   - component: {fileID: 975733715}
+  - component: {fileID: 975733719}
   m_Layer: 0
   m_Name: Church
-  m_TagString: Untagged
+  m_TagString: Church
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,6 +1205,18 @@ Transform:
   - {fileID: 5049943374046657353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &975733719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975733714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1082607723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,9 +1229,10 @@ GameObject:
   - component: {fileID: 1082607726}
   - component: {fileID: 1082607725}
   - component: {fileID: 1082607728}
+  - component: {fileID: 1082607729}
   m_Layer: 0
   m_Name: Sheriff Office
-  m_TagString: Untagged
+  m_TagString: SheriffOffice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1258,6 +1324,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 31.407806, y: 24.901905, z: 47.906815}
   m_Center: {x: 0.72845656, y: 11.950953, z: 4.217435}
+--- !u!114 &1082607729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082607723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127741879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,9 +1348,10 @@ GameObject:
   - component: {fileID: 1127741882}
   - component: {fileID: 1127741881}
   - component: {fileID: 1127741880}
+  - component: {fileID: 1127741884}
   m_Layer: 0
   m_Name: Saloon
-  m_TagString: Untagged
+  m_TagString: Saloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,6 +1443,62 @@ Transform:
   - {fileID: 1933757205083376846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 142.884, z: 0}
+--- !u!114 &1127741884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127741879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1280061274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280061276}
+  - component: {fileID: 1280061277}
+  m_Layer: 0
+  m_Name: BuildingAssigner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1280061276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280061274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 219.70865, y: -136.96747, z: 582.7013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280061277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280061274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede7ecfce45c7cc40aa5323f27f9135a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1358956170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,9 +1511,10 @@ GameObject:
   - component: {fileID: 1358956173}
   - component: {fileID: 1358956172}
   - component: {fileID: 1358956171}
+  - component: {fileID: 1358956175}
   m_Layer: 0
   m_Name: Bank
-  m_TagString: Untagged
+  m_TagString: Bank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1470,6 +1606,18 @@ Transform:
   - {fileID: 3843603602584047188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 122.742, z: 0}
+--- !u!114 &1358956175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358956170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1434301695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,9 +1783,10 @@ GameObject:
   - component: {fileID: 1843699412}
   - component: {fileID: 1843699411}
   - component: {fileID: 1843699410}
+  - component: {fileID: 1843699414}
   m_Layer: 0
   m_Name: Post Office
-  m_TagString: Untagged
+  m_TagString: PostOffice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1729,6 +1878,18 @@ Transform:
   - {fileID: 3759426908469248757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -122.588, z: 0}
+--- !u!114 &1843699414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843699409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e95555d981aa743842940a60910494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1993821956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,3 +3167,4 @@ SceneRoots:
   - {fileID: 44925585}
   - {fileID: 2030041783}
   - {fileID: 2040633006}
+  - {fileID: 1280061276}

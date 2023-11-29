@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Butcher
+  - SheriffOffice
+  - Church
+  - Blacksmith
+  - PostOffice
+  - BarberShop
+  - Bank
+  - Saloon
+  - GeneralStore
   layers:
   - Default
   - TransparentFX
