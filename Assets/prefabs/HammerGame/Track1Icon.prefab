@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   track: 1
-  zBound: 6.311611
-  startPos: {x: 31.52537, y: 19.05577, z: 96.10869}
+  zBound: -20.38839
+  startPos: {x: 31.52537, y: 40.25576, z: 69.40868}
