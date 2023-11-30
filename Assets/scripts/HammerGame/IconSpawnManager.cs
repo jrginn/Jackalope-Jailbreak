@@ -62,6 +62,6 @@ public class IconSpawnManager : MonoBehaviour
 
     IEnumerator Finish() {
         yield return new WaitForSeconds(1.5f);
-        scoreManager.GetComponent<ScoreManager>().FinishGame();
+        StartCoroutine(scoreManager.GetComponent<ScoreManager>().FinishGame());
     }
 }

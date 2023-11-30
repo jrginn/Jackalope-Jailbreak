@@ -8,6 +8,12 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] GameObject iconSpawnManager;
     [SerializeField] GameObject canvas;
+    [SerializeField] PlayableDirector hammerTimeline;
+    [SerializeField] PlayableDirector badTimeline;
+    [SerializeField] PlayableDirector goodTimeline;
+    [SerializeField] PlayableDirector greatTimeline;
+
+
     public int score = 0;
     
     private Hat finalItem;
@@ -30,6 +36,16 @@ public class ScoreManager : MonoBehaviour
         finalItem = Hat.Tan;
         iconSpawnManager.GetComponent<IconSpawnManager>().Restart();
         canvas.SetActive(false);
+
+        // Timelines
+        hammerTimeline.Stop();
+        badTimeline.Stop();
+        goodTimeline.Stop();
+        greatTimeline.Stop();
+        hammerTimeline.time = 0;
+        badTimeline.time = 0;
+        goodTimeline.time = 0;
+        greatTimeline.time = 0;
     }
 
     public void AddScore(int scoreToAdd) 
@@ -37,21 +53,27 @@ public class ScoreManager : MonoBehaviour
         score += scoreToAdd;
     }
 
-    public void FinishGame()
+    public IEnumerator FinishGame()
     {
+        hammerTimeline.Play();
+        float seconds = (float)hammerTimeline.duration;
+        yield return new WaitForSeconds(seconds);
         canvas.SetActive(true);
         // total possible score is 40
         if (score < 15) {
             Debug.Log("Bad Item");
             finalItem = Hat.Tan;
+            badTimeline.Play();
         }
         else if (score <= 30) {
             Debug.Log("Good Item");
             finalItem = Hat.Brown;
+            goodTimeline.Play();
         }
         else {
             Debug.Log("Great Item");
             finalItem = Hat.Red;
+            greatTimeline.Play();
         }
     }
 
