@@ -21,12 +21,12 @@ public class ScoreCounting : MonoBehaviour
         
     }
 
-    void increment()
+    public void Increment()
     {
         _textMeshPro.text = _score++.ToString();
     }
 
-    void decrement()
+    public void Decrement()
     {
         _textMeshPro.text = _score--.ToString();
     }

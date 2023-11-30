@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class balloonPop : MonoBehaviour
+public class BalloonPop : MonoBehaviour
 {
+    public GameObject scoreCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,10 @@ public class balloonPop : MonoBehaviour
         
     }
 
-    void Pop()
+    public void Pop()
     {
+        ScoreCounting sc = scoreCounter.GetComponent<ScoreCounting>();
+        sc.Increment();
         Destroy(gameObject);
-        // TODO: Send message to score counter
     }
 }
