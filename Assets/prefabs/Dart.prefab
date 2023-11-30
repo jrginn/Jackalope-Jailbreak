@@ -183,4 +183,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 0
   velocityRatio: 20
-  velocityFloor: 8
+  velocityFloor: 12

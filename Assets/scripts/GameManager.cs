@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum GameState {
-    Paused, GameOver
+    Default,
+    Paused,
+    GameOver
 };
 
 public enum Boots {
@@ -41,6 +43,24 @@ public class GameManager : MonoBehaviour
 
     public Hat hat;
     public Boots boots;
+    public GameState state = GameState.Default;
+    public GameObject pauseMenu;
+
+    // Update is called each frame
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            switch (state)
+            {
+                case GameState.Default: Pause();
+                    break;
+                case GameState.Paused: Resume();
+                    break;
+                // Don't do anything if player hits pause during GameOver
+            }
+        }
+    }
 
     public void ChangeHat(Hat newHat) {
         hat = newHat;
@@ -49,5 +69,22 @@ public class GameManager : MonoBehaviour
     public void ChangeBoots(Boots newBoots) {
         boots = newBoots;
     }
-    
+
+    public void Pause()
+    {
+        state = GameState.Paused;
+        // This will freeze all time-dependent actions
+        Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        if (state != GameState.GameOver)
+        {
+            state = GameState.Default;
+            Time.timeScale = 1f;
+        }
+
+    }
+
 }
