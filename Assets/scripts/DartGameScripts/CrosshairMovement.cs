@@ -47,7 +47,7 @@ public class CrosshairMovement : MonoBehaviour
         // If crosshair hits edge of board turn around
         // + clamp mouse position to keep it in line vertically
         // If this is on a screen space canvas, transform.position is in pixels
-        if (_controllerScript.state == GameState.Aiming)
+        if (_controllerScript.state == DartGameState.Aiming)
         {
             Vector2 screenPos = new Vector2(transform.position.x,
             Mathf.Clamp(Input.mousePosition.y, _lowerBound.y, _upperBound.y));

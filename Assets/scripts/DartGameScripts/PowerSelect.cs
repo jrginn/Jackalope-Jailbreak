@@ -31,7 +31,7 @@ public class PowerSelect : MonoBehaviour
     void Update()
     {
 
-        if (_controllerScript.state == GameState.SelectingPower)
+        if (_controllerScript.state == DartGameState.SelectingPower)
         {
             if (slider.normalizedValue <= 0 || slider.normalizedValue >= 1)
             {
@@ -44,7 +44,7 @@ public class PowerSelect : MonoBehaviour
             Mathf.Cos(slider.value) * Mathf.Cos(slider.value) * currDir;
             if (Input.GetButtonDown("Fire1"))
             {
-                _controllerScript.state = GameState.Aiming;
+                _controllerScript.state = DartGameState.Aiming;
                 crosshair.GetComponent<DartShoot>().SpawnDart(GetPower());
                 gameObject.SetActive(false);
             }

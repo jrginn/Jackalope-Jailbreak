@@ -6,7 +6,7 @@ using UnityEngine;
  * State machine to handle the dart game loop
  */
 
-public enum GameState
+public enum DartGameState
 {
     Aiming,
     SelectingPower,
@@ -14,16 +14,19 @@ public enum GameState
 }
 public class DartGameController : MonoBehaviour
 {
-    public GameState state;
+    public DartGameState state;
     // Start is called before the first frame update
     void Start()
     {
-        state = GameState.Aiming;
+        state = DartGameState.Aiming;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (state == DartGameState.Ending)
+        {
+            Time.
+        }
     }
 }

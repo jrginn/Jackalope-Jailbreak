@@ -23,7 +23,7 @@ public class DartShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_controllerScript.state == GameState.Aiming
+        if (_controllerScript.state == DartGameState.Aiming
             && Input.GetButtonDown("Fire1"))
         {
             Shoot();
@@ -36,7 +36,7 @@ public class DartShoot : MonoBehaviour
         {
 
             // Change game state
-            _controllerScript.state = GameState.SelectingPower;
+            _controllerScript.state = DartGameState.SelectingPower;
             powerBar.SetActive(true);
 
             // Power bar will send command to shoot
