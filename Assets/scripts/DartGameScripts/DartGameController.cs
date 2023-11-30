@@ -26,7 +26,7 @@ public class DartGameController : MonoBehaviour
     {
         if (state == DartGameState.Ending)
         {
-            Time.
+            //Time.
         }
     }
 }
