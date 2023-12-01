@@ -30,7 +30,7 @@ public class JackalopeController : MonoBehaviour
     {
         if (!collision.collider.CompareTag("Ground"))
         {
-            angle = Random.Range(150, 210);
+            angle = Random.Range(120, 240);
             transform.Rotate(Vector3.up, angle);
         }
     }
