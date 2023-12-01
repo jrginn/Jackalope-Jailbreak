@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         state = GameState.Paused;
         // This will freeze all time-dependent actions
         Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
     }
 
     public void Resume()
@@ -84,7 +85,13 @@ public class GameManager : MonoBehaviour
             state = GameState.Default;
             Time.timeScale = 1f;
         }
+        pauseMenu.SetActive(false);
 
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quitting Game...");
+        Application.Quit();
+    }
 }
