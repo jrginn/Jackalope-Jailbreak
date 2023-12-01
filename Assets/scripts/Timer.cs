@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
 
     public float seconds;
-    public TextMeshProUGUI timeText;
+    private TextMeshProUGUI timeText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
+        timeText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TextMeshProUGUI>();
+        print("seconds: " + seconds);
     }
 
     // Update is called once per frame
@@ -29,8 +32,10 @@ public class Timer : MonoBehaviour
             seconds = 0;
             print("L");
         }
-
-        DisplayTime(seconds);
+        if (SceneManager.GetActiveScene().name.Equals("MainScene"))
+        {
+            DisplayTime(seconds);
+        }
     }
 
     void DisplayTime(float timeToDisplay)

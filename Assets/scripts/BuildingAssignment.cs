@@ -54,6 +54,9 @@ public class BuildingAssignment : MonoBehaviour
         }
         int riddleB = Random.Range(0, 1);
 
+        print("Dart: " + buildingList[buildingAIndex]);
+        print("Hammer: " + buildingList[buildingBIndex]);
+
         GameObject dartBuilding = GameObject.FindGameObjectWithTag(buildingList[buildingAIndex]);
         GameObject hammerBuilding = GameObject.FindGameObjectWithTag(buildingList[buildingBIndex]);
 

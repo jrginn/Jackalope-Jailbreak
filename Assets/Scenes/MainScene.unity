@@ -1989,7 +1989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 600
-  timeText: {fileID: 2130352612}
 --- !u!4 &1548169223
 Transform:
   m_ObjectHideFlags: 0
@@ -2695,7 +2694,7 @@ GameObject:
   - component: {fileID: 2130352612}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: TimerText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
