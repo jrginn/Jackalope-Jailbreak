@@ -44,15 +44,6 @@ public class IconController : MonoBehaviour
             loseCon++;
         }
 
-        if (score % 100 == 0 && score > 0)
-        {
-            print("Score: " + score);
-        }
-
-        if (loseCon % 100 == 0 && loseCon > 0)
-        {
-            print("Lose: " + loseCon);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
