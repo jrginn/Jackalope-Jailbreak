@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CatchScene.unity
     guid: 40cb136558f5d5a4890b032a29df29fc
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 2d96119a101b5f54b82322df131b8260
   m_configObjects: {}
