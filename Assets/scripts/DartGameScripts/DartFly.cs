@@ -12,10 +12,12 @@ public class DartFly : MonoBehaviour
     // Min velocity m/s
     public float velocityFloor;
 
+    public GameObject dartGameController;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -29,8 +31,17 @@ public class DartFly : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        // Send collision message to controller
+        DartGameController dgc = dartGameController.GetComponent<DartGameController>();
+        if (dgc == null)
+        {
+            Debug.Log("DartFly: DartGameController is NULL on collision");
+        } else
+        {
+            dgc.HandleDartCollision();
+        }
+
         // Assumes Balloon prefab has model as child
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.GetComponentInParent<BalloonPop>() != null)
         {
             BalloonPop bp = collision.gameObject.GetComponentInParent<BalloonPop>();

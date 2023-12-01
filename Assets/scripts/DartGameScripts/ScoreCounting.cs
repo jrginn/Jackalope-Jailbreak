@@ -4,20 +4,20 @@ using TMPro;
 using UnityEngine;
 
 // Require textmeshpro
-[RequireComponent(typeof(TextMeshPro))]
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class ScoreCounting : MonoBehaviour
 {
     public GameObject ammoCounter;
-    public GameObject dartGameController;
+    public string counterName;
 
-    private TextMeshPro _textMeshPro;
+    private TextMeshProUGUI _textMeshPro;
     private int _score;
-    private AmmoCount _count;
     // Start is called before the first frame update
     void Start()
     {
-        _textMeshPro = GetComponent<TextMeshPro>();
-        _count = ammoCounter.GetComponent<AmmoCount>();
+        _score = 0;
+        _textMeshPro = GetComponent<TextMeshProUGUI>();
+        _textMeshPro.text = counterName + _score.ToString();
     }
 
     // Update is called once per frame
@@ -28,16 +28,12 @@ public class ScoreCounting : MonoBehaviour
 
     public void Increment()
     {
-        _textMeshPro.text = _score++.ToString();
-        if (_count.ammoCount == 0)
-        {
-            dartGameController.GetComponent<DartGameController>().state = DartGameState.Ending;
-        }
+        _textMeshPro.text = counterName + (++_score).ToString();
     }
 
     public void Decrement()
     {
-        _textMeshPro.text = _score--.ToString();
+        _textMeshPro.text = counterName + (--_score).ToString();
     }
 
     // We need to use a getter here because I want the text to update
@@ -46,4 +42,5 @@ public class ScoreCounting : MonoBehaviour
     {
         return _score;
     }
+
 }

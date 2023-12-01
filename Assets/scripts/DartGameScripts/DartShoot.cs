@@ -24,7 +24,7 @@ public class DartShoot : MonoBehaviour
     void Update()
     {
         if (_controllerScript.state == DartGameState.Aiming
-            && Input.GetButtonDown("Fire1"))
+            && Input.GetButtonDown("Fire1") && Time.timeScale != 0)
         {
             Shoot();
         }
@@ -50,6 +50,8 @@ public class DartShoot : MonoBehaviour
 
         GameObject dart = GameObject.Instantiate(dartPrefab, cam.transform.position,
                 Quaternion.LookRotation(ray.direction));
-        dart.GetComponent<DartFly>().power = power;
+        DartFly df = dart.GetComponent<DartFly>();
+        df.power = power;
+        df.dartGameController = controller;
     }
 }

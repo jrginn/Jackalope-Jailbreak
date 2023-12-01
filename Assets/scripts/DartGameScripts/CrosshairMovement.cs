@@ -58,6 +58,9 @@ public class CrosshairMovement : MonoBehaviour
                 _currentVX *= -1; // Turn around
             }
 
+            // Check for pause to stop y movement
+            if (Time.timeScale == 0) screenPos.y = transform.position.y;
+
             transform.position = new Vector3(
                 screenPos.x + _currentVX * Time.deltaTime,
                 screenPos.y, transform.position.z);

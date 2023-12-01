@@ -40,8 +40,9 @@ public class PowerSelect : MonoBehaviour
 
             // Eq: v = scale*cos^2(slider.value)* (+-1)
             // I like cos^2 better as it makes it a little more difficult
-            slider.value += velocityScale *
-            Mathf.Cos(slider.value) * Mathf.Cos(slider.value) * currDir;
+            slider.value += (velocityScale *
+            Mathf.Cos(slider.value) * Mathf.Cos(slider.value) * currDir)
+            * Time.deltaTime;
             if (Input.GetButtonDown("Fire1"))
             {
                 _controllerScript.state = DartGameState.Aiming;
