@@ -60,9 +60,6 @@ public class BuildingAssignment : MonoBehaviour
         dartBuilding.GetComponent<BuildingTransition>().LoadMinigame("DartScene");
         hammerBuilding.GetComponent<BuildingTransition>().LoadMinigame("HammerScene");
 
-        print(riddles[buildingAIndex, riddleA]);
-        print(riddles[buildingBIndex, riddleB]);
-
         GameObject text = GameObject.FindGameObjectWithTag("RiddleBoard");
         text.GetComponent<TextMeshProUGUI>().SetText(riddles[buildingAIndex, riddleA] + "\n\n" + riddles[buildingBIndex, riddleB]);
 
