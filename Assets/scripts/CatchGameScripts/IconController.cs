@@ -11,6 +11,10 @@ public class IconController : MonoBehaviour
 
     public float strength;
 
+    private float score;
+    private float loseCon;
+    private float forceTimer;
+    private bool inZone;
 
     void Start()
     {
@@ -24,9 +28,40 @@ public class IconController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector3.up * strength;
-            cf.force = Vector3.up * Random.Range(-15, -9);
-            //rb.AddForce(new Vector3(0, 1000, 0));
-            print("Uppies");
+            forceTimer += Time.deltaTime;
+            if(forceTimer >= 3)
+            {
+                cf.force = Vector3.up * Random.Range(-15, -9);
+            }
         }
+
+        if (inZone)
+        {
+            score++;
+        }
+        else
+        {
+            loseCon++;
+        }
+
+        if (score % 100 == 0 && score > 0)
+        {
+            print("Score: " + score);
+        }
+
+        if (loseCon % 100 == 0 && loseCon > 0)
+        {
+            print("Lose: " + loseCon);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        inZone = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inZone = false;
     }
 }
