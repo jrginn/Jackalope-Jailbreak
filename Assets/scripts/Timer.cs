@@ -52,8 +52,8 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            seconds = 600;
-            print("L");
+            seconds = 0;
+            SceneManager.LoadScene("LossScene");
         }
         if (SceneManager.GetActiveScene().name.Equals("MainScene"))
         {
