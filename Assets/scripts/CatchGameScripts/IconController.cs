@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IconController : MonoBehaviour
 {
@@ -37,11 +38,21 @@ public class IconController : MonoBehaviour
 
         if (inZone)
         {
-            score++;
+            score += Time.deltaTime;
         }
         else
         {
-            loseCon++;
+            loseCon += Time.deltaTime;
+        }
+
+        if (score >= 7 && score < 7.1)
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
+        
+        if (loseCon >= 10 && loseCon < 10.1)
+        {
+            SceneManager.LoadScene("MainScene");
         }
 
     }
