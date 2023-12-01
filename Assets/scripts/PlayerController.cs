@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float lassoRange;
 
     Rigidbody rb;
 
@@ -17,7 +19,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hitdata;
+            if (Physics.Raycast(ray, out hitdata, lassoRange))
+            {
+                if(hitdata.collider.tag.Equals("Jackalope"))
+                {
+                    SceneManager.LoadScene("CatchScene");
+                }
+            }
+        }
     }
 
     private void FixedUpdate()

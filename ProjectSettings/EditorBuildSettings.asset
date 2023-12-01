@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DartScene.unity
     guid: d91e3c7107a292440ac12af46c1afa8b
+  - enabled: 1
+    path: Assets/Scenes/CatchScene.unity
+    guid: 40cb136558f5d5a4890b032a29df29fc
   m_configObjects: {}
