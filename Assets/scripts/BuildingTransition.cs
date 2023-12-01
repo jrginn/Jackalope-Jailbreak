@@ -11,7 +11,8 @@ public class BuildingTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hasGame = false;   
+        hasGame = false;
+        sceneName = "";
     }
 
     // Update is called once per frame
@@ -22,6 +23,10 @@ public class BuildingTransition : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!sceneName.Equals(""))
+        {
+            hasGame = true;
+        }
         if (hasGame && collision.collider.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneName);
