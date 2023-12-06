@@ -2649,7 +2649,7 @@ GameObject:
   - component: {fileID: 1917283341}
   m_Layer: 0
   m_Name: Jackalope
-  m_TagString: Untagged
+  m_TagString: Jackalope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2687,8 +2687,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.3638723, z: 2.2278137}
-  m_Center: {x: 0, y: 1.237945, z: -0.24250793}
+  m_Size: {x: 2.1408844, y: 5.9839115, z: 4.423889}
+  m_Center: {x: -0.053123474, y: 3.0479646, z: -0.14746094}
 --- !u!54 &1917283343
 Rigidbody:
   m_ObjectHideFlags: 0
