@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public float lassoRange;
 
     Rigidbody rb;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            anim.SetTrigger("ThrowLasso");
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hitdata;
             if (Physics.Raycast(ray, out hitdata, lassoRange))
@@ -37,9 +40,15 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 movement = (horizontal * transform.right) + (vertical * transform.forward);
-        movement = movement.normalized * moveSpeed * Time.deltaTime;
-        rb.MovePosition(transform.position + movement);
+        if (horizontal  != 0 || vertical != 0) {
+            anim.SetBool("Walking", true);
+            Vector3 movement = (horizontal * transform.right) + (vertical * transform.forward);
+            movement = movement.normalized * moveSpeed * Time.deltaTime;
+            rb.MovePosition(transform.position + movement);
+        } 
+        else {
+            anim.SetBool("Walking", false);
+        }
     }
 
     void IncreaseMoveSpeed(float increase)

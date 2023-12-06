@@ -2539,6 +2539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: toughTedv4
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: fd630b81478a1e344ad45b29df440181, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c6a6e2abe8116954ba342b5738b9ccda, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: fd630b81478a1e344ad45b29df440181, type: 3}
