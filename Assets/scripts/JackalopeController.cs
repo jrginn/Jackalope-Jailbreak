@@ -17,7 +17,10 @@ public class JackalopeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector3.Distance(transform.position, new Vector3(200, 0, 400)) > 150)
+        {
+            transform.position = new Vector3(200, 0, 400);
+        }
     }
 
     private void FixedUpdate()
