@@ -33,6 +33,7 @@ public class IconController : MonoBehaviour
             if(forceTimer >= 3)
             {
                 cf.force = Vector3.up * Random.Range(-15, -9);
+                forceTimer = 0;
             }
         }
 
