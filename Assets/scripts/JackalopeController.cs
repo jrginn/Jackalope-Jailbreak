@@ -17,9 +17,9 @@ public class JackalopeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, new Vector3(200, 0, 400)) > 150)
+        if (Vector3.Distance(transform.position, new Vector3(0, 0, 0)) > 100)
         {
-            transform.position = new Vector3(200, 0, 400);
+            transform.position = new Vector3(0, 0, 0);
         }
     }
 
@@ -34,7 +34,7 @@ public class JackalopeController : MonoBehaviour
         if (!collision.collider.CompareTag("Ground"))
         {
             angle = Random.Range(120, 240);
-            transform.Rotate(Vector3.up, angle);
+            transform.Rotate(Vector3.up, angle);    
         }
     }
 }

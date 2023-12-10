@@ -34,6 +34,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        if (Vector3.Distance(transform.position, new Vector3(0, 0, 0)) > 150)
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
     }
 
     private void FixedUpdate()
