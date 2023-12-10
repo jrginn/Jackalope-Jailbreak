@@ -61,8 +61,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: d4cdae0d09b2a1d458a1521afc52dcd4, type: 3}
-  - {fileID: -3033667219593020291, guid: d4cdae0d09b2a1d458a1521afc52dcd4, type: 3}
+  - {fileID: 2100000, guid: 62484fc6b617626408ba122b0d1ab58f, type: 2}
+  - {fileID: 2100000, guid: 62484fc6b617626408ba122b0d1ab58f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184,3 +184,4 @@ MonoBehaviour:
   power: 0
   velocityRatio: 20
   velocityFloor: 12
+  dartGameController: {fileID: 0}

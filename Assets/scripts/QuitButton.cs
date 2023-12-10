@@ -20,7 +20,7 @@ public class QuitButton : MonoBehaviour
 
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
         GameManager.Instance.QuitGame();
     }
