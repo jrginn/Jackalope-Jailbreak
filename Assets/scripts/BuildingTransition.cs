@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class BuildingTransition : MonoBehaviour
 {
+    [SerializeField]
     private bool hasGame;
+    [SerializeField]
     private string sceneName;
 
     // Start is called before the first frame update
