@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public enum GameState {
     Default,
     Paused,
-    GameOver
+    GameOver,
 };
 
 public enum Boots {
-    Red, Black, Brown
+    Red, Black, Brown, None
 };
 
 public enum Hat {
-    Red, Brown, Tan
+    Red, Brown, Tan, None
 };
 public class GameManager : MonoBehaviour
 {  
@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
             _instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+
+        if (!started) 
+        {
+            StartGame();
+        }
     }
     #endregion
 
@@ -45,6 +50,7 @@ public class GameManager : MonoBehaviour
     public Boots boots;
     public GameState state = GameState.Default;
     public GameObject pauseMenu;
+    public bool started = false;
 
     // Update is called each frame
     private void Update()
@@ -87,6 +93,14 @@ public class GameManager : MonoBehaviour
         }
         pauseMenu.SetActive(false);
 
+    }
+
+    public void StartGame()
+    {
+        Debug.Log("Starting Game");
+        started = true;
+        ChangeBoots(Boots.None);
+        ChangeHat(Hat.None);
     }
 
     public void QuitGame()
