@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1572,52 +1572,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257005367}
   m_CullTransparentMesh: 1
---- !u!1 &1498514860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1498514862}
-  - component: {fileID: 1498514861}
-  m_Layer: 0
-  m_Name: Timer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1498514861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498514860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4bb230afe25ac946a2a29698b8ec37a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 0
-  timeText: {fileID: 1257005369}
---- !u!4 &1498514862
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498514860}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1515988915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,7 +2444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c788636ebaa70478c998f186f69712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloon: {fileID: 1949181496506588230, guid: 878b5958b7a9afc40a9dceb07e6df88d, type: 3}
+  balloon: {fileID: 1777112730980458456, guid: 31055c1d2a80d77469e61759ecdb25cf, type: 3}
   balloonNum: 7
   spawnGridSize: 5
   scoreCounter: {fileID: 167001876}
@@ -2593,5 +2547,4 @@ SceneRoots:
   - {fileID: 1668349317}
   - {fileID: 1660241077}
   - {fileID: 562216130}
-  - {fileID: 1498514862}
   - {fileID: 1655905622}

@@ -55,14 +55,11 @@ public class Timer : MonoBehaviour
             seconds = 0;
             SceneManager.LoadScene("LossScene");
         }
-        if (SceneManager.GetActiveScene().name.Equals("MainScene"))
+        if (timeText == null)
         {
-            if (timeText == null)
-            {
-                timeText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TextMeshProUGUI>();
-            }
-            DisplayTime(seconds);
+            timeText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TextMeshProUGUI>();
         }
+        DisplayTime(seconds);
     }
 
     void DisplayTime(float timeToDisplay)

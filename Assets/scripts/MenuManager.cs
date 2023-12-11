@@ -25,13 +25,17 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown("Cancel"))
+        {
+            TogglePause();
+        }
     }
 
     public void TogglePause()
     {
         pause = !pause;
         pauseMenu.gameObject.SetActive(pause);
+        Time.timeScale = pause ? 0f : 1f; // Change time scale. 0 if paused, 1 otherwise
     }
 
     public void ToggleHowToPlay() 
