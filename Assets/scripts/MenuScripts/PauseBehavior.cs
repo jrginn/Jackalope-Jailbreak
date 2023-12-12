@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseBehavior : MonoBehaviour
 {
@@ -8,11 +9,18 @@ public class PauseBehavior : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        // Self-Deactivate
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void ToMainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

@@ -17,6 +17,7 @@ TagManager:
   - Jackalope
   - RiddleBoard
   - TimerText
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

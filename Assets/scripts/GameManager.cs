@@ -7,6 +7,7 @@ public enum GameState {
     Default,
     Paused,
     GameOver,
+    InMenus
 };
 
 public enum Boots {
@@ -39,18 +40,40 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
 
-        if (!started) 
+        // Find pause menu object
+        if (pauseMenu == null)
+        {
+            pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+            if (pauseMenu == null)
+            {
+                // This should never run
+                Debug.Log("GameManager: Cannot find pause menu!");
+            }
+            Resume();
+        }
+
+        // Set state accordingly
+        if (SceneManager.GetActiveScene().name.Equals("MainMenuScene"))
+        {
+            state = GameState.InMenus;
+        } else
+        {
+            state = GameState.Default;
+        }
+
+        // Should not need this since we start in menus
+        /*if (!started) 
         {
             StartGame();
-        }
+        }*/
     }
     #endregion
 
     public Hat hat;
     public Boots boots;
     public GameState state = GameState.Default;
-    public GameObject pauseMenu;
     public bool started = false;
+    public GameObject pauseMenu;
 
     // Update is called each frame
     private void Update()
@@ -63,7 +86,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case GameState.Paused: Resume();
                     break;
-                // Don't do anything if player hits pause during GameOver
+                // Don't do anything if player hits pause during GameOver or in menus
             }
         }
     }
@@ -92,7 +115,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
         }
         pauseMenu.SetActive(false);
-
     }
 
     public void StartGame()
@@ -101,6 +123,18 @@ public class GameManager : MonoBehaviour
         started = true;
         ChangeBoots(Boots.None);
         ChangeHat(Hat.None);
+        state = GameState.Default;
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void SaveGame()
+    {
+        // PLACEHOLDER
+    }
+
+    public void LoadGame()
+    {
+        // PLACEHOLDER
     }
 
     public void QuitGame()
