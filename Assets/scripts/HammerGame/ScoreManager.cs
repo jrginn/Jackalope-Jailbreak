@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] PlayableDirector badTimeline;
     [SerializeField] PlayableDirector goodTimeline;
     [SerializeField] PlayableDirector greatTimeline;
+    [SerializeField] AudioSource audioSrc;
 
 
     public int score = 0;
@@ -73,6 +74,7 @@ public class ScoreManager : MonoBehaviour
         else {
             Debug.Log("Great Item");
             finalItem = Hat.Red;
+            audioSrc.Play();
             greatTimeline.Play();
         }
     }

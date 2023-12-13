@@ -19,11 +19,17 @@ public class IconController : MonoBehaviour
     private float forceTimer;
     private bool inZone;
 
+    [SerializeField] AudioSource audioSrc;
+    [SerializeField] AudioClip struggle;
+    [SerializeField] AudioClip emote;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();    
         cf = GetComponent<ConstantForce>();
         anim.SetBool("Struggle", true);
+        audioSrc.PlayOneShot(struggle);
+
     }
 
     // Update is called once per frame
@@ -73,6 +79,7 @@ public class IconController : MonoBehaviour
 
     IEnumerator LoseGame() {
         anim.SetTrigger("Emote");
+        audioSrc.PlayOneShot(emote);
         yield return new WaitForSeconds(1.06f);
         anim.SetBool("Struggle", false);
         SceneManager.LoadScene("MainScene");
