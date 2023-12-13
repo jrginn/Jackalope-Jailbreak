@@ -171,12 +171,20 @@ public class GameManager : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + SAVE_FILE_NAME);
         SaveObject saveObject = JsonUtility.FromJson<SaveObject>(json);
         // Add time to timer
+        if (Timer.Instance == null)
+        {
+            Debug.Log("Timer is NULL! Ensure timer is added to main menu scene!");
+            return;
+        }
+        Timer.Instance.seconds = saveObject.timeInSeconds;
+
         // Equip hat and boots
         hat = saveObject.saveHat;
         boots = saveObject.saveBoots;
         // Start game
         Debug.Log("Starting from save file " + SAVE_FILE_NAME);
         started = true;
+        state = GameState.Default;
         SceneManager.LoadScene("MainScene");
 
     }
@@ -185,5 +193,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Quitting Game...");
         Application.Quit();
+    }
+
+    public void GotoMainMenu()
+    {
+        state = GameState.InMenus;
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
