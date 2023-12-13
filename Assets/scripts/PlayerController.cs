@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float lassoRange;
+    public GameObject lassoSpawn;
+    public float delay = 1f;
+
+    private bool canThrow;
 
     Rigidbody rb;
     Animator anim;
@@ -16,14 +20,19 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        canThrow = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canThrow)
         {
             anim.SetTrigger("ThrowLasso");
+            lassoSpawn.GetComponent<ThrowLasso>().Launch();
+            canThrow = false;
+            StartCoroutine(ThrowDelay());
+            /**
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hitdata;
             if (Physics.Raycast(ray, out hitdata, lassoRange))
@@ -33,6 +42,8 @@ public class PlayerController : MonoBehaviour
                     SceneManager.LoadScene("CatchScene");
                 }
             }
+            **/
+
         }
 
         if (Vector3.Distance(transform.position, new Vector3(0, 0, 0)) > 150)
@@ -59,5 +70,11 @@ public class PlayerController : MonoBehaviour
     void IncreaseMoveSpeed(float increase)
     {
         moveSpeed += increase;
+    }
+
+    IEnumerator ThrowDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        canThrow = true;
     }
 }

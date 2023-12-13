@@ -2650,7 +2650,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832299713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2706,7 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lasso: {fileID: 4251910788404263891, guid: 8db39c622167e5742a14500f1a0ec07d, type: 3}
-  launchVelocity: 1000
+  launchVelocity: 1300
 --- !u!1 &1843699409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,6 +3234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 12
   lassoRange: 50
+  lassoSpawn: {fileID: 1832299713}
+  delay: 1
 --- !u!114 &1993821963
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JackalopeController : MonoBehaviour
 {
@@ -36,5 +37,11 @@ public class JackalopeController : MonoBehaviour
             angle = Random.Range(120, 240);
             transform.Rotate(Vector3.up, angle);    
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("collide");
+        SceneManager.LoadScene("CatchScene");
     }
 }
