@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
     public Boots boots;
     public GameState state = GameState.Default;
     public bool started = false;
-    public GameObject pauseMenu;
+    public GameObject pauseMenu;  
+
 
     // Update is called each frame
     private void Update()
