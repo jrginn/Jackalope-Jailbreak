@@ -31,6 +31,7 @@ public class BuildingTransition : MonoBehaviour
         }
         if (hasGame && collision.collider.CompareTag("Player"))
         {
+            Debug.Log("Loading into minigame " + sceneName);
             SceneManager.LoadScene(sceneName);
         }
     }
