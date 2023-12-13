@@ -34,19 +34,17 @@ public class Timer : MonoBehaviour
     #endregion
 
     public float seconds = 0;
-    public float totalTime = 300;
+    public int totalMins = 5;
     public TextMeshProUGUI timeText;
     private GameObject timerGO;
+    private float totalSeconds;
 
     // Start is called before the first frame update
     void Start()
     {
+        totalSeconds = totalMins * 60;
         DontDestroyOnLoad(gameObject);
-        timerGO = GameObject.FindGameObjectWithTag("TimerText");
-        if (timerGO != null)
-        {
-            timeText = timerGO.GetComponent<TextMeshProUGUI>();
-        }
+        getTimeText();
     }
 
     // Update is called once per frame
@@ -57,7 +55,7 @@ public class Timer : MonoBehaviour
         {
             return;
         }
-        if (seconds < totalTime)
+        if (seconds < totalSeconds)
         {
             seconds += Time.deltaTime;
         }
@@ -80,7 +78,7 @@ public class Timer : MonoBehaviour
 
     void DisplayTime(float timeToDisplay)
     {
-        float minutes = 9 - Mathf.FloorToInt(timeToDisplay / 60);
+        float minutes = totalMins - 1 - Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = 59 - Mathf.FloorToInt(timeToDisplay % 60);
         float milliSeconds = 999 - (timeToDisplay % 1) * 1000;
         timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
