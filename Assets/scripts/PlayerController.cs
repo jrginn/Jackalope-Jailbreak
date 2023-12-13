@@ -21,6 +21,20 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         canThrow = true;
+
+        GameManager gm = GameManager.Instance;
+        switch(gm.boots)
+        {
+            case Boots.Red:
+                moveSpeed = 21f;
+                break;
+            case Boots.Black:
+                moveSpeed = 18f;
+                break;
+            case Boots.Brown:
+                moveSpeed = 15f;
+                break;
+        }
     }
 
     // Update is called once per frame
