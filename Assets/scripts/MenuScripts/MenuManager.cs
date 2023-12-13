@@ -37,4 +37,24 @@ public class MenuManager : MonoBehaviour
         aboutMenu.gameObject.SetActive(!about);
         howMenu.gameObject.SetActive(false);
     }
+
+    public void StartGame()
+    {
+        GameManager.Instance.StartGame();
+    }
+
+    public void LoadGame()
+    {
+        GameManager.Instance.LoadGame();
+    }
+
+    public void SaveGame()
+    {
+        GameManager.Instance.SaveGame();
+    }
+
+    public void QuitGame()
+    {
+        GameManager.Instance.QuitGame();
+    }
 }
