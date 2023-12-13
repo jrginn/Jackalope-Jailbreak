@@ -95,6 +95,8 @@ public class DartGameController : MonoBehaviour
             _finalItem = Boots.Brown;
         }
 
+        GameManager.Instance.ChangeBoots(_finalItem);
+
         endGameMenu.SetActive(true);
     }
 }
