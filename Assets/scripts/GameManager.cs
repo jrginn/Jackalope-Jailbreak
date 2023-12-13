@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -73,8 +74,16 @@ public class GameManager : MonoBehaviour
     public Boots boots;
     public GameState state = GameState.Default;
     public bool started = false;
-    public GameObject pauseMenu;  
+    public GameObject pauseMenu;
+    public const string SAVE_FILE_NAME = "/save.json";
 
+
+    private class SaveObject
+    {
+        public float timeInSeconds;
+        public Hat saveHat;
+        public Boots saveBoots;
+    }
 
     // Update is called each frame
     private void Update()
@@ -118,6 +127,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    // Start NEW game
     public void StartGame()
     {
         Debug.Log("Starting Game");
@@ -130,12 +140,45 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        // PLACEHOLDER
+        // if started is false, then the timer does not exist and we cannot save
+        if (!started || Timer.Instance == null)
+        {
+            // Display warning
+            Debug.Log("Game cannot be saved! Please start the game first!");
+            return;
+        }
+        // Next, query the Timer and create SaveObject
+        SaveObject saveObject = new()
+        {
+            timeInSeconds = Timer.Instance.seconds,
+            saveHat = hat,
+            saveBoots = boots
+        };
+        string json = JsonUtility.ToJson(saveObject);
+        // Save json to file
+        File.WriteAllText(Application.dataPath + SAVE_FILE_NAME, json);
+        Debug.Log("Game saved!");
     }
 
     public void LoadGame()
     {
-        // PLACEHOLDER
+        // Check if file exists
+        if (!File.Exists(Application.dataPath + SAVE_FILE_NAME))
+        {
+            Debug.Log("Save file does not exist!");
+            return;
+        }
+        string json = File.ReadAllText(Application.dataPath + SAVE_FILE_NAME);
+        SaveObject saveObject = JsonUtility.FromJson<SaveObject>(json);
+        // Add time to timer
+        // Equip hat and boots
+        hat = saveObject.saveHat;
+        boots = saveObject.saveBoots;
+        // Start game
+        Debug.Log("Starting from save file " + SAVE_FILE_NAME);
+        started = true;
+        SceneManager.LoadScene("MainScene");
+
     }
 
     public void QuitGame()
