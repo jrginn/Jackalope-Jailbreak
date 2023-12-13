@@ -10,6 +10,8 @@ public class IconController : MonoBehaviour
     private Rigidbody rb;
     private ConstantForce cf;
 
+    [SerializeField] Animator anim;
+
     public float strength;
 
     private float score;
@@ -21,6 +23,7 @@ public class IconController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();    
         cf = GetComponent<ConstantForce>();
+        anim.SetBool("Struggle", true);
     }
 
     // Update is called once per frame
@@ -53,7 +56,7 @@ public class IconController : MonoBehaviour
         
         if (loseCon >= 10 && loseCon < 10.1)
         {
-            SceneManager.LoadScene("MainScene");
+            StartCoroutine(LoseGame());
         }
 
     }
@@ -66,5 +69,12 @@ public class IconController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         inZone = false;
+    }
+
+    IEnumerator LoseGame() {
+        anim.SetTrigger("Emote");
+        yield return new WaitForSeconds(1.06f);
+        anim.SetBool("Struggle", false);
+        SceneManager.LoadScene("MainScene");
     }
 }
