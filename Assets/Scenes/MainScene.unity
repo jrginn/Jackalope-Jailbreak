@@ -1956,7 +1956,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1e1d096d6316f8340b851386d55a7040, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dcba94d1cd6d68445beecabca0dc84fb, type: 2}
+      objectReference: {fileID: 2100000, guid: 03a4cf106d507664e8c9b840d2796b3d, type: 2}
     - target: {fileID: 919132149155446097, guid: 1e1d096d6316f8340b851386d55a7040, type: 3}
       propertyPath: m_Name
       value: TedHatv1
