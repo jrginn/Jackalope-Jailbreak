@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BalloonPop : MonoBehaviour
 {
-    public GameObject scoreCounter;
+    public GameObject scoreCounter; 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,6 +20,7 @@ public class BalloonPop : MonoBehaviour
     public void Pop()
     {
         ScoreCounting sc = scoreCounter.GetComponent<ScoreCounting>();
+        GameObject.FindWithTag("SFX").GetComponent<AudioSource>().Play();
         sc.Increment();
         Destroy(gameObject);
     }

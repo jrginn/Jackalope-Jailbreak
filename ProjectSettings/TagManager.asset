@@ -18,6 +18,7 @@ TagManager:
   - RiddleBoard
   - TimerText
   - PauseMenu
+  - SFX
   layers:
   - Default
   - TransparentFX

@@ -13,11 +13,13 @@ public class DartFly : MonoBehaviour
     public float velocityFloor;
 
     public GameObject dartGameController;
+    private AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSrc = gameObject.GetComponentInChildren<AudioSource>();
+        audioSrc.Play();
     }
 
     // Update is called once per frame
