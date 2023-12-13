@@ -57,9 +57,18 @@ public class Timer : MonoBehaviour
         }
         if (timeText == null)
         {
-            timeText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TextMeshProUGUI>();
+            GameObject textGO = GameObject.FindGameObjectWithTag("TimerText");
+            if(textGO != null)
+            {
+                timeText = textGO.GetComponent<TextMeshProUGUI>();
+            }            
         }
-        DisplayTime(seconds);
+
+        if (timeText != null)
+        {
+            DisplayTime(seconds);
+        }
+        
     }
 
     void DisplayTime(float timeToDisplay)
