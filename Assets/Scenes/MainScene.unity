@@ -2822,6 +2822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 0
+  totalTime: 300
   timeText: {fileID: 0}
 --- !u!4 &1548169223
 Transform:
