@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8160941858192344984, guid: d422e7bec4e4ec74fa552e1a110f5748, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6212312476792058779, guid: d422e7bec4e4ec74fa552e1a110f5748, type: 3}
@@ -516,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 0
-  totalTime: 300
+  totalMins: 1
   timeText: {fileID: 0}
 --- !u!4 &1997833365
 Transform:
