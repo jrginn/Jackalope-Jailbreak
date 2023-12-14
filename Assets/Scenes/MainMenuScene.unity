@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 0
-  totalMins: 1
+  totalMins: 5
   timeText: {fileID: 0}
 --- !u!4 &1997833365
 Transform:
